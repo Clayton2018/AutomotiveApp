@@ -1,0 +1,53 @@
+<div class="card my-5">
+        <div class="card-body">
+    
+       <form (ngSubmit)="onSubmit()" #mechanicForm="ngForm">      
+           
+            <div>
+            <label for="empName">ID</label>{{ mechanic.empId }}
+                 
+            </div>
+    
+            <div>
+               <label for="empName">name</label>{{ mechanic.empName }}
+            
+            </div>
+            
+    
+            <div class="play-container">
+                <label for="empSurname">Surname</label>{{ mechanic.empSurname }}
+                </div>
+            
+    
+            <div class="play-container">
+                <label for="empJobTitle">Job Title</label>{{ mechanic.empJobTitle }}
+                </div>
+            
+    
+            <div class="play-container">
+                <label for="empAddress">Address</label>{{ mechanic.empAddress }}
+               </div>
+    
+            <div class="play-container">
+                    <label for="employmentDate">Employment Date</label>{{ mechanic.employmentDate }}
+               </div>
+    
+            <div class="play-container">
+                    <label for="empTel">Telephone</label>{{ 0 + mechanic.empTel }}
+              </div>
+    
+            <div class="play-container">
+                    <label for="allocatedBay">Bay Allocation</label>{{ mechanic.allocatedBay }}
+           </div>
+    
+            <div class="play-container">
+                    <label for="salary">Salary</label>{{ "R" + mechanic.salary }} 
+            </div>       
+    
+    
+               <button (click)="list" class="btn btn-info">back to mechanic list</button>
+    
+          </form>
+        </div>
+      </div>
+    

@@ -1,0 +1,68 @@
+<div class="card my-5">
+        <div class="card-body">
+    
+       <form (ngSubmit)="onSubmit()" #mechanicForm="ngForm">           
+    
+            <div class="play-container">
+               <label for="empName">name</label>
+               <input type="text" [(ngModel)]="mechanic.empName" class="form-control" id="empName" name="empName" placeholder="Enter name" required #empName="ngModel">
+               <div [hidden]="!empName.pristine" class="alert alert-danger">Mechanic name is required</div>
+            </div>
+            
+    
+            <div class="play-container">
+                <label for="empSurname">Surname</label>
+                <input type="text" [(ngModel)]="mechanic.empSurname" class="form-control" id="empSurname" name="empSurname" placeholder="Enter surname" required #empSurname="ngModel">   
+                <div [hidden]="!empSurname.pristine" class="alert alert-danger">Surname is required</div>
+            </div>
+            
+    
+            <div class="play-container">
+                <label for="empJobTitle">Job Title</label>
+                <input type="text" [(ngModel)]="mechanic.empJobTitle" class="form-control" id="empJobTitle" name="empJobTitle" placeholder="Enter title" required #empJobTitle="ngModel">
+                <div [hidden]="!empJobTitle.pristine" class="alert alert-danger">Job title is required</div>              
+            </div>
+            
+    
+            <div class="play-container">
+                <label for="empAddress">Address</label>
+                <input type="text" [(ngModel)]="mechanic.empAddress" class="form-control" id="empAddress" name="empAddress" placeholder="Enter Address" required #empAddress="ngModel">
+                <div [hidden]="!empAddress.pristine" class="alert alert-danger">Address is required</div>        
+            </div>
+    
+            <div class="play-container">
+                    <label for="employmentDate">Employment Date</label>
+                    <input type="date" [(ngModel)]="mechanic.employmentDate" class="form-control" id="employmentDate" name="employmentDate" placeholder="Enter employment date" required #employmentDate="ngModel">
+                    <div [hidden]="!employmentDate.pristine" class="alert alert-danger">Employment date is required</div>        
+            </div>
+    
+            <div class="play-container">
+                    <label for="empTel">Telephone</label>
+                    <input type="number" [(ngModel)]="mechanic.empTel" class="form-control" id="empTel" name="empTel" placeholder="Enter Telephone" required #empTel="ngModel">
+                    <div [hidden]="!empTel.pristine" class="alert alert-danger">Telephone is required</div>        
+            </div>
+    
+            <div class="play-container">
+                    <label for="allocatedBay">Bay Allocation</label>
+                    <input type="text" [(ngModel)]="mechanic.allocatedBay" class="form-control" id="allocatedBay" name="allocatedBay" placeholder="Enter bay allocated" required #allocatedBay="ngModel">
+                    <div [hidden]="!allocatedBay.pristine" class="alert alert-danger">Bay allocation is required</div>        
+            </div>
+    
+            <div class="play-container">
+                    <label for="salary">Salary</label>
+                    <input type="number" [(ngModel)]="mechanic.salary" class="form-control" id="salary" name="salary" placeholder="Enter salary" required #salary="ngModel">
+                    <div [hidden]="!salary.pristine" class="alert alert-danger">Salary is required</div>        
+            </div>       
+    
+    
+               <button type="submit" [disabled]="!mechanicForm.form.valid" class="btn btn-info">Submit</button>
+    
+               <div [hidden]="!submitted">
+                    <h4>Mechanic successfully updated!</h4>
+                    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+                  </div>
+          
+          </form>
+        </div>
+      </div>
+    

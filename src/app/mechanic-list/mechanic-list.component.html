@@ -1,0 +1,45 @@
+<h1>Mechanic</h1>
+<!--
+<ul *ngIf="mechanics">
+  <li *ngFor="let mechanic of mechanics">
+    <p class="name">Name: {{ mechanic.empName }}</p>
+    <p class="name">Surname: {{ mechanic.empSurname }}</p>
+    <p class="country">Title: {{ mechanic.empJobTitle }}</p>
+    <p class="country">Address: {{ mechanic.empAddress }}</p>
+    <p class="country">Employment date: {{ mechanic.employmentDate }}</p>
+    <p class="country">Telephone: {{ 0 + mechanic.empTel }}</p>
+    <p class="country">Bay: {{ mechanic.allocatedBay }}</p>
+    <p class="country">Salary: {{ "R" + mechanic.salary }}</p>
+  </li>
+</ul>
+-->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Employee List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Job Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mechanic of mechanics | async">
+            <td>{{mechanic.empId}}</td>
+            <td>{{mechanic.empName}}</td>
+            <td>{{mechanic.empSurname}}</td>
+            <td>{{ mechanic.empJobTitle}}</td>
+            <td><button (click)="delete(mechanic.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateMechanic(mechanic.id)" class="btn btn-info" style="margin-left: 10px">Update</button> 
+              <button (click)="mechanicDetails(mechanic.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

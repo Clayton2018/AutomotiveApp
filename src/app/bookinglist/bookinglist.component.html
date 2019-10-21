@@ -1,0 +1,11 @@
+<h1>Bookings</h1>
+
+<ul *ngIf="bookings">
+  <li *ngFor="let booking of bookings">
+    <!--<p class="name">ID: {{ booking.bookingId }}</p>-->
+    <p class="name">Date: {{ booking.bookingDate }}</p>
+    <p class="country">Cust ID: {{ booking.customerId }}</p>
+    <p class="country">Vehicle Reg: {{ booking.vehicleReg }}</p>
+    <p class="country">description: {{ booking.description }}</p>
+  </li>
+</ul>

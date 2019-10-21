@@ -1,0 +1,43 @@
+<div class="card my-5">
+        <div class="card-body">
+
+       <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">           
+
+            <div class="play-container">
+
+               <label for="name">booking date</label>
+               <input type="date" [(ngModel)]="booking.bookingDate" class="form-control" id="bookingDate" name="name" placeholder="Enter date" required #bookingDate="ngModel">
+               <div [hidden]="!bookingDate.pristine" class="alert alert-danger">date is required</div> 
+           
+            </div>
+            
+            <div class="play-container">
+            
+                <label for="name">customer id</label>
+                <input type="text" [(ngModel)]="booking.customerId" class="form-control" id="customerId" name="name" placeholder="Enter customer" required #customerId="ngModel">
+                      
+            </div>
+            <div [hidden]="!customerId.pristine" class="alert alert-danger">customer id is required</div>
+
+            <div class="play-container">
+            
+                <label for="name">vehicle reg</label>
+                <input type="text" [(ngModel)]="booking.vehicleReg" class="form-control" id="vehicleReg" name="name" placeholder="Enter vehicle reg" required #vehicleReg="ngModel">
+                          
+            </div>
+            <div [hidden]="!vehicleReg.pristine" class="alert alert-danger">vehicle reg is required</div>
+
+            <div class="play-container">
+            
+                <label for="name">description</label>
+                <input type="text" [(ngModel)]="booking.description" class="form-control" id="description" name="name" placeholder="Booking Description" required #description="ngModel">
+                          
+            </div>
+            <div [hidden]="!description.pristine" class="alert alert-danger">description reg is required</div>
+
+
+               <button type="submit" [disabled]="bookingForm.form.invalid" class="btn btn-info">Submit</button>
+          
+          </form>
+        </div>
+      </div>
